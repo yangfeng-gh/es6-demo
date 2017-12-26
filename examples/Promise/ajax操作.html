@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax操作</title>
+    <script>
+        var getJSON = function(url) {
+            var promise = new Promise(function(resolve, reject){
+                var client = new XMLHttpRequest();
+                client.open("GET", url);
+                client.onreadystatechange = handler;
+                client.responseType = "json";
+                client.setRequestHeader("Accept", "application/json");
+                client.send();
+
+                function handler() {
+                    if (this.readyState !== 4) {
+                        return;
+                    }
+                    if (this.status === 200) {
+                        resolve(this.response);
+                    } else {
+                        reject(new Error(this.statusText));
+                    }
+                };
+            });
+
+            return promise;
+        };
+
+        getJSON("goods.json").then(function(json) {
+            return json;
+        }, function(error) {
+            console.error('出错了', error);
+        }).then(function(jsonArray) {
+            console.log('Contents: ' + JSON.stringify(jsonArray[0])); //前一个then返回一个新的promise对象
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+---
+root: true
+parserOptions:
+  ecmaVersion: 6
+  sourceType: module
+env:
+  browser: true,
+  node: true
+extends: "eslint:recommended"
+plugins:
+  - html
+  - react
+rules:
+  indent: ["error", 2, { "SwitchCase": 1 }]
+  quotes: ["off", "single"]
+  semi: ["warn", "never"]
+  no-unused-vars: ["off"]
+  no-console: ["off"]
+

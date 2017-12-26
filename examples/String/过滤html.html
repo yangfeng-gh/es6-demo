@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤html</title>
+</head>
+<body>
+<input id="safe" type="text" value="">
+<input id="unsafe" type="text" value="">
+<script>
+
+    function SaferHTML(templateData) {
+        var s = templateData[0];
+        for (var i = 1; i < arguments.length; i++) {
+            var arg = String(arguments[i]);
+
+            // Escape special characters in the substitution.
+            s += arg.replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+
+            // Don't escape special characters in the template.
+            s += templateData[i];
+        }
+        return s;
+    }
+
+    var safe = document.querySelector('#safe');
+    safe.addEventListener('change', function () {
+        let sender = this.value;
+        let message = SaferHTML`<p>${sender} has sent you a message.</p>`;
+        this.setAttribute('value', message);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板编译</title>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        var template = `
+            <ul>
+              <% for(var i=0; i < data.supplies.length; i++) { %>
+                <li><%= data.supplies[i] %></li>
+              <% } %>
+            </ul>
+            `;
+
+        /*
+         目标：将上面的模块转换为JavaScript表达式字符串。
+         echo('<ul>');
+         for(var i=0; i < data.supplies.length; i++) {
+         echo('<li>');
+         echo(data.supplies[i]);
+         echo('</li>');
+         };
+         echo('</ul>');
+         */
+
+        function compile(template){
+            var evalExpr = /<%=(.+?)%>/g;
+            var expr = /<%([\s\S]+?)%>/g;
+
+            template = template
+                    .replace(evalExpr, '`); \n  echo( $1 ); \n  echo(`')
+                    .replace(expr, '`); \n $1 \n  echo(`');
+
+            template = 'echo(`' + template + '`);';
+
+            var script =
+                    `(function parse(data){
+
+            var output = "";
+            function echo(html){
+                output += html;
+            }
+            ${ template }
+            return output;
+        })`;
+            return script;
+        }
+
+        var div = document.querySelector('div');
+        var parse = eval(compile(template));
+        div.innerHTML = parse({ supplies: [ "broom", "mop", "cleaner" ] });
+    </script>
+</body>
+</html>

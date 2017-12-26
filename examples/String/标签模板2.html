@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签模板</title>
+</head>
+<body>
+    <div>tagged template</div>
+    <script>
+        var total = 30;
+        var msg = passthru`The total is ${total} (${total*1.05} with tax)`;
+
+        function passthru(literals) {
+            var result = '';
+            var i = 0;
+
+            while (i < literals.length) {
+                result += literals[i++];
+                console.log(result);
+                if (i < arguments.length) {
+                    result += arguments[i];
+                }
+                console.log(result);
+            }
+
+            return result;
+        }
+        document.querySelector('div').innerHTML = msg;
+        // "The total is 30 (31.5 with tax)"
+    </script>
+</body>
+</html>

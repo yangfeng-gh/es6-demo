@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rest参数写法</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        var total = 30;
+        var msg = passthru`The total is ${total} (${total*1.05} with tax)`;
+
+        function passthru(literals, ...values) {
+            var output = "";
+            for (var index = 0; index < values.length; index++) {
+                output += literals[index] + values[index];
+            }
+
+            output += literals[index];
+            return output;
+        }
+
+        document.querySelector('div').innerHTML = msg;
+    </script>
+</body>
+</html>

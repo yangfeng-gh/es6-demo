@@ -1,0 +1,18 @@
+[
+  {
+    "goods_common_id": 111780,
+    "goods_name": "龙门米醋  6桶/箱",
+    "image_url": "http://i0.jinxiudadi.com/data/upload/shop/store/goods/3373/3373_05133627861934233.jpg",
+    "goods_price": 40,
+    "sell_amount": 0,
+    "store_id": 3373
+  },
+  {
+    "goods_common_id": 106227,
+    "goods_name": "六郎枣夹核桃",
+    "image_url": "http://i0.jinxiudadi.com/data/upload/shop/store/goods/254/254_05053009902446528.jpg",
+    "goods_price": 86,
+    "sell_amount": 0,
+    "store_id": 254
+  }
+]
