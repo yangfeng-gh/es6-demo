@@ -14,5 +14,77 @@
     "goods_price": 86,
     "sell_amount": 0,
     "store_id": 254
+  },
+  {
+    "goods_common_id": 103173,
+    "goods_name": "若羌红枣",
+    "image_url": "http://i0.jinxiudadi.com/data/upload/shop/store/goods/263/263_05024582062227230.jpg",
+    "goods_price": 200,
+    "sell_amount": 0,
+    "store_id": 263
+  },
+  {
+    "goods_common_id": 102943,
+    "goods_name": "红枣夹核桃",
+    "image_url": "http://i0.jinxiudadi.com/data/upload/shop/store/goods/17/17_05022888845453023.jpg",
+    "goods_price": 30,
+    "sell_amount": 591430,
+    "store_id": 17
+  },
+  {
+    "goods_common_id": 101871,
+    "goods_name": "新疆红枣特产  有机和田大枣子   新疆特级零食干果批发特价",
+    "image_url": "http://i0.jinxiudadi.com/data/upload/shop/store/goods/34/34_04988611586310263.jpg",
+    "goods_price": 28,
+    "sell_amount": 5305,
+    "store_id": 34
+  },
+  {
+    "goods_common_id": 101596,
+    "goods_name": "碧根果大颗粒",
+    "image_url": "http://i0.jinxiudadi.com/data/upload/shop/store/goods/1/1_04965000409383802.jpg",
+    "goods_price": 310,
+    "sell_amount": 47157,
+    "store_id": 1
+  },
+  {
+    "goods_common_id": 101415,
+    "goods_name": "11.11红枣夹核桃",
+    "image_url": "http://i0.jinxiudadi.com/data/upload/shop/store/goods/47/47_04958140129359157.jpg",
+    "goods_price": 60,
+    "sell_amount": 1,
+    "store_id": 47
+  },
+  {
+    "goods_common_id": 100661,
+    "goods_name": "山之娇  精制核桃油",
+    "image_url": "http://i0.jinxiudadi.com/data/upload/shop/store/goods/36/36_04907279896044968.jpg",
+    "goods_price": 168,
+    "sell_amount": 0,
+    "store_id": 36
+  },
+  {
+    "goods_common_id": 100139,
+    "goods_name": "开心果",
+    "image_url": "http://i0.jinxiudadi.com/data/upload/shop/store/goods/22/22_04857862273841122.jpg",
+    "goods_price": 46,
+    "sell_amount": 530,
+    "store_id": 22
+  },
+  {
+    "goods_common_id": 100136,
+    "goods_name": "新疆核桃",
+    "image_url": "http://i0.jinxiudadi.com/data/upload/shop/store/goods/22/22_04857857234129558.jpg",
+    "goods_price": 26,
+    "sell_amount": 0,
+    "store_id": 22
+  },
+  {
+    "goods_common_id": 100123,
+    "goods_name": "和田骏枣三级",
+    "image_url": "http://i0.jinxiudadi.com/data/upload/shop/store/goods/17/17_04857172170678220.jpg",
+    "goods_price": 350,
+    "sell_amount": 24255,
+    "store_id": 17
   }
 ]
