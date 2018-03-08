@@ -10,7 +10,7 @@
         var a = 5;
         var b = 10;
 
-        function tag2(s, v1, v2) {
+        function tag(s, v1, v2) {
             console.log(s[0]);
             console.log(s[1]);
             console.log(s[2]);
@@ -21,14 +21,17 @@
             return "OK";
         }
 
-        tag2`Hello ${ a + b } world ${ a * b}`;
-
-        // " world "
-        // ""
+        tag`Hello ${ a + b } world ${ a * b}`;
+        
+        // 等同于
+        // tag(['Hello ', ' world ', ''], 15, 50);
+        
+        // hello
+        // world
+        //
         // undefined
         // 15
         // 50
-        // "OK"
     </script>
 </body>
 </html>
