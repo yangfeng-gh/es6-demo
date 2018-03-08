@@ -2,5 +2,6 @@ node_modules
 .vscode
 .idea
 assets/
+examples/**/*.js
 examples/**/*.js.map
 test/
