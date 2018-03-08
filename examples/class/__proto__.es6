@@ -15,7 +15,7 @@ class Animal {
     }
 }
 
-var animal = new Animal('dog', 'white');
+let animal = new Animal('dog', 'white');
 animal.toString();
 
 console.log(animal.hasOwnProperty('name')); //true
@@ -25,7 +25,7 @@ console.log(animal.__proto__.hasOwnProperty('toString')); // true
 class Cat extends Animal {
     constructor(action) {
         // 子类必须要在constructor中指定super 方法，否则在新建实例的时候会报错.
-        // 如果没有置顶consructor,默认带super方法的constructor将会被添加、
+        // 如果没有置顶consructor,默认带super方法的constructor将会被添加
         super('cat', 'white');
         this.action = action;
     }
@@ -35,7 +35,7 @@ class Cat extends Animal {
     }
 }
 
-var cat = new Cat('catch')
+let cat = new Cat('catch')
 cat.toString();
 
 // 实例cat 是 Cat 和 Animal 的实例，和Es5完全一致。
