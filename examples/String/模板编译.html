@@ -37,21 +37,21 @@
 
             template = 'echo(`' + template + '`);';
 
-            var script =
-                    `(function parse(data){
-
-            var output = "";
-            function echo(html){
-                output += html;
-            }
-            ${ template }
-            return output;
-        })`;
+            var script = `(
+            function parse(data){
+                var output = "";
+                function echo(html){
+                    output += html;
+                }
+                ${ template }
+                return output;
+            })`;
             return script;
         }
 
         var div = document.querySelector('div');
         var parse = eval(compile(template));
+        console.log(parse);
         div.innerHTML = parse({ supplies: [ "broom", "mop", "cleaner" ] });
     </script>
 </body>
