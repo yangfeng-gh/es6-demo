@@ -43,11 +43,11 @@ console.log(/abc/ig.flags);
 // 'gi'
 
 // RegExp.escape()
-// RegExp.escape('The Quick Brown Fox');
+console.log(RegExp.escape('The Quick Brown Fox'));
 // "The Quick Brown Fox"
 
-// RegExp.escape('Buy it. use it. break it. fix it.');
+console.log(RegExp.escape('Buy it. use it. break it. fix it.'));
 // "Buy it\. use it\. break it\. fix it\."
 
-// RegExp.escape('(*.*)');
+console.log(RegExp.escape('(*.*)'));
 // "\(\*\.\*\)"
