@@ -21,3 +21,12 @@ var handler = {
 var fproxy = new Proxy(function(x, y) {
     return x + y;
 }, handler);
+
+console.log(fproxy(1, 2));
+
+console.log(new fproxy(1, 2));
+
+console.log(fproxy.prototype === Object.prototype)
+
+fproxy.foo === "Hello, proxy";
+console.log(fproxy.foo);
