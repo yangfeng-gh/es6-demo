@@ -11,13 +11,12 @@ let arrayLike = {
 };
 
 // ES5的写法
-var arr1 = [].slice.call(arrayLike); // ['a', 'b', 'c'];
-console.log(`es5将类数组对象转成数组： ${arr1}`);
+// var arr1 = [].slice.call(arrayLike); // ['a', 'b', 'c'];
+// console.log(`es5将类数组对象转成数组： ${arr1}`);
 
 // ES6的写法
 let arr2 = Array.from(arrayLike); // ['a', 'b', 'c'];
 console.log(`es6将类数组对象转成数组： ${arr2}`);
-
 
 // NodeList对象
 if (typeof window == 'object') {

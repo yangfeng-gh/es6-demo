@@ -1,6 +1,5 @@
 /**
  * 属性的遍历
- *
  */
 
 /*
@@ -34,8 +33,8 @@ Reflect.ownKeys返回一个数组，包含对象自身的所有属性，不管�
 
 */
 
-
-var props = Reflect.ownKeys({ [Symbol()]:0, b:0, 10:0, 2:0, a:0 })
+var obj = {[Symbol()]: 0, b: 0, 10: 0, 2: 0, a: 0};
+var props = Reflect.ownKeys(obj);
 console.log(props);
 // ['2', '10', 'b', 'a', Symbol()]
 // 上面代码中，Reflect.ownKeys方法返回一个数组，包含了参数对象的所有属性。
