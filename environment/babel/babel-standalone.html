@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>babel-standalone</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script> -->
+    <script src="lib/babel.js" charset="utf-8"></script>
+</head>
+<body>
+<p>注意，网页中实时将ES6代码转为ES5，对性能会有影响。生产环境需要加载已经转码完成的脚本。</p>
+<p id="output" style="color: #f00">此例测试不成功</p>
+<script type="text/babel" data-presets="es2015,stage-2">
+    // Your ES6 code
+    const getMessage = () => "Hello World";
+    document.getElementById('output').innerHTML = getMessage();
+</script>
+<!-- <script type="text/babel" src="js/es6-file.js"></script> -->
+<!-- <script type="text/babel" data-plugins="lolizer"> -->
+</body>
+</html>
