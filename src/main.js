@@ -1,2 +1,2 @@
-// example1
-input.map(item => item + 1);
+// main.js
+console.log('main');

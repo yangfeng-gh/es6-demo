@@ -30,19 +30,19 @@ const Foo = {
 };
 
 @mixins(Foo)
-class MyClass {}
+class MyClass2 {}
 
 let obj = new MyClass();
 obj.foo() // 'foo'
 
 // 上面代码通过修饰器mixins，把Foo类的方法添加到了MyClass的实例上面。可以用Object.assign()模拟这个功能。
-const Foo = {
+const Foo2 = {
     foo() { console.log('foo') }
 };
 
-class MyClass {}
+class MyClass3 {}
 
 Object.assign(MyClass.prototype, Foo);
 
-let obj = new MyClass();
-obj.foo() // 'foo'
+let obj2 = new MyClass();
+obj2.foo() // 'foo'
