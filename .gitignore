@@ -16,7 +16,6 @@ dist/
 assets/
 examples/**/*.js
 examples/**/*.js.map
-test/tat
 *.suo
 *.ntvs*
 *.njsproj
