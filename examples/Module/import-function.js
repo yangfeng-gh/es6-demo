@@ -1,0 +1,1 @@
+import('./profile').then(m => console.log(m)).catch(err => console.log(err));
