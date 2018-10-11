@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Symbol.for值登记的名字，是全局环境的</title>
+</head>
+<body>
+<script>
+    iframe = document.createElement('iframe');
+    iframe.src = String(window.location);
+    document.body.appendChild(iframe);
+
+    console.log(iframe.contentWindow.Symbol.for('foo') === Symbol.for('foo'))
+</script>
+</body>
+</html>

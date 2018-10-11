@@ -18,7 +18,7 @@ Symbol函数的参数相当于为它们加上了描述，输出的时候就能�
  */
 let s1 = Symbol('foo');
 let s2 = Symbol('bar');
-console.log(`s1 = ${s1}, s2 = ${s2}`)
+console.log(`s1 = ${String(s1)}, s2 = ${String(s2)}`)
 
 /*
 如果 Symbol 的参数是一个对象，就会调用该对象的toString方法，将其转为字符串，然后才生成一个 Symbol 值。

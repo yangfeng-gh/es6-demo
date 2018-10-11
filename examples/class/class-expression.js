@@ -11,8 +11,7 @@ const MyClass = class me {
 // 上面代码使用表达式定义了一个类。需要注意的是，这个类的名字是myclass而不是me，me只在class的内部代码可用，指代当前类。
 
 var myclass = new MyClass();
-var name = myclass.getclassname();
-console.log(name);
+console.log(myclass.getclassname());
 
 // 采用Class表达式，可以写出立即执行的Class。
 let person = new class {
