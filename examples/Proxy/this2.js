@@ -21,5 +21,4 @@ const handler = {
     }
 };
 const proxy = new Proxy(target, handler);
-
-proxy.getDate() // 1
+console.log(proxy.getDate()); // 1
