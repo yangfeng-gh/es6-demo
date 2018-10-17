@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类似数组的对象</title>
+    <style>
+        .test {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>p1</p>
+    <p>p2</p>
+</div>
+<script>
+    // 字符串
+    let str = "hello";
+
+    for (let s of str) {
+        console.log(s); // h e l l o
+    }
+
+    // DOM NodeList对象
+    let paras = document.querySelectorAll("p");
+
+    for (let p of paras) {
+        p.classList.add("test");
+    }
+
+    // arguments对象
+    function printArgs() {
+        for (let x of arguments) {
+            console.log(x);
+        }
+    }
+    printArgs('a', 'b');
+    // 'a'
+    // 'b'
+
+    // 对于字符串来说，for...of循环还有一个特点，就是会正确识别 32 位 UTF-16 字符。
+    for (let x of 'a\uD83D\uDC0A') {
+        console.log(x);
+    }
+    // 'a'
+    // '\uD83D\uDC0A'
+</script>
+</body>
+</html>

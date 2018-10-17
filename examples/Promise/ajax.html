@@ -8,6 +8,7 @@
 
 <div>
     <textarea rows="10" cols="100" id="json"></textarea>
+    <button onclick="load()">加载数据</button>
 </div>
 
 <script>
@@ -35,14 +36,16 @@
         return promise;
     };
 
-    getJSON("goods.json").then(function(json) {
-        return json;
-    }, function(error) {
-        console.error('出错了', error);
-    }).then(function(jsonArray) {
-        //前一个then返回一个新的promise对象
-        document.getElementById('json').innerText = JSON.stringify(jsonArray[0]);
-    });
+    function load() {
+        getJSON("../assets/goods.json").then(function(json) {
+            return json;
+        }, function(error) {
+            console.error('出错了', error);
+        }).then(function(jsonArray) {
+            //前一个then返回一个新的promise对象
+            document.getElementById('json').innerText = JSON.stringify(jsonArray[0]);
+        });
+    }
 </script>
 </body>
 </html>

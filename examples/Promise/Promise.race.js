@@ -5,8 +5,9 @@
  */
 
 // 如果指定时间内没有获得结果，就将Promise的状态变为reject，否则变为resolve。
+var fetch = require('node-fetch');
 var p = Promise.race([
-    fetch('/resource-that-may-take-a-while'),
+    fetch('http://api.apiopen.top/singlePoetry'),
     new Promise(function (resolve, reject) {
         setTimeout(() => reject(new Error('request timeout')), 5000)
     })

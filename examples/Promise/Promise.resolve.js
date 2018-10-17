@@ -47,6 +47,8 @@ Promise.resolve().then(function () {
 });
 
 console.log('one');
+
+// 需要注意的是，立即resolve的 Promise 对象，是在本轮“事件循环”（event loop）的结束时，而不是在下一轮“事件循环”的开始时。
 // 上面代码中，setTimeout(fn, 0)在下一轮“事件循环”开始时执行，
 // Promise.resolve()在本轮“事件循环”结束时执行，
 // console.log(’one‘)则是立即执行，因此最先输出。

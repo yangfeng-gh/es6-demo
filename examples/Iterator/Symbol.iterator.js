@@ -1,5 +1,5 @@
-/**
- * Created by yvan on 2016-07-25.
+/*
+一个对象如果要具备可被for...of循环调用的 Iterator 接口，就必须在Symbol.iterator的属性上部署遍历器生成方法（原型链上的对象具有该方法也可）。
  */
 
 class RangeIterator {
