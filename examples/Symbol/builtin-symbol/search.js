@@ -10,7 +10,7 @@ class MySearch {
         this.value = value;
     }
     [Symbol.search](string) {
-        return string.indexOf(this.value);
+        return string.search(this.value);
     }
 }
 console.log('foobar'.search(new MySearch('bar'))); // 3

@@ -4,12 +4,15 @@
 String.prototype.match(regexp)
 // 等同于
 regexp[Symbol.match](this)
- */
+*/
 
 class MyMatcher {
+    constructor(regexp) {
+        this.regexp = regexp;
+    }
     [Symbol.match](string) {
-        return 'hello world'.indexOf(string);
+        return string.match(this.regexp);
     }
 }
 
-console.log('e'.match(new MyMatcher())) // 1
+console.log('hello world'.match(new MyMatcher('e'))) // [ 'e', index: 1, input: 'hello world' ]
