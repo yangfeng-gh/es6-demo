@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SystemJS</title>
+  <script src="traceur.js"></script>
+  <script src="system.src.js"></script>
+  <script>
+    System.config({
+      transpiler: 'traceur',
+      traceurOptions: {
+        annotations: true
+      },
+    });
+    System.import('./app.js').then(function (m) {
+      console.log(new m.q().es6); // hello
+    });
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

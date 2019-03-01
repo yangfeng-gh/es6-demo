@@ -187,7 +187,7 @@ foo()
 使用`export`命令定义了模块的对外接口以后，其他 JS 文件就可以通过`import`命令加载这个模块。
 
 ```
-// main.js
+// main3.js
 import {firstName, lastName, year} from './profile.js';
 
 function setName(element) {
@@ -315,7 +315,7 @@ export function circumference(radius) {
 现在，加载这个模块。
 
 ```
-// main.js
+// main3.js
 
 import { area, circumference } from './circle';
 
@@ -487,7 +487,7 @@ export { each as forEach };
 // MyClass.js
 export default class { ... }
 
-// main.js
+// main3.js
 import MyClass from 'MyClass';
 let o = new MyClass();
 ```
@@ -585,7 +585,7 @@ export { area as circleArea } from 'circle';
 加载上面模块的写法如下。
 
 ```
-// main.js
+// main3.js
 
 import * as math from 'circleplus';
 import exp from 'circleplus';
@@ -923,10 +923,10 @@ module.exports = {
 };
 ```
 
-上面代码输出内部变量`counter`和改写这个变量的内部方法`incCounter`。然后，在`main.js`里面加载这个模块。
+上面代码输出内部变量`counter`和改写这个变量的内部方法`incCounter`。然后，在`main3.js`里面加载这个模块。
 
 ```
-// main.js
+// main3.js
 var mod = require('./lib');
 
 console.log(mod.counter);  // 3
@@ -950,10 +950,10 @@ module.exports = {
 };
 ```
 
-上面代码中，输出的`counter`属性实际上是一个取值器函数。现在再执行`main.js`，就可以正确读取内部变量`counter`的变动了。
+上面代码中，输出的`counter`属性实际上是一个取值器函数。现在再执行`main3.js`，就可以正确读取内部变量`counter`的变动了。
 
 ```
-$ node main.js
+$ node main3.js
 3
 4
 ```
@@ -969,7 +969,7 @@ export function incCounter() {
   counter++;
 }
 
-// main.js
+// main3.js
 import { counter, incCounter } from './lib';
 console.log(counter); // 3
 incCounter();
@@ -1010,14 +1010,14 @@ baz
 // lib.js
 export let obj = {};
 
-// main.js
+// main3.js
 import { obj } from './lib';
 
 obj.prop = 123; // OK
 obj = {}; // TypeError
 ```
 
-上面代码中，`main.js`从`lib.js`输入变量`obj`，可以对`obj`添加属性，但是重新赋值就会报错。因为变量`obj`指向的地址是只读的，不能重新赋值，这就好比`main.js`创造了一个名为`obj`的`const`变量。
+上面代码中，`main3.js`从`lib.js`输入变量`obj`，可以对`obj`添加属性，但是重新赋值就会报错。因为变量`obj`指向的地址是只读的，不能重新赋值，这就好比`main3.js`创造了一个名为`obj`的`const`变量。
 
 最后，`export`通过接口，输出的是同一个值。不同的脚本加载这个接口，得到的都是同样的实例。
 
@@ -1047,15 +1047,15 @@ c.add();
 import {c} from './mod';
 c.show();
 
-// main.js
+// main3.js
 import './x';
 import './y';
 ```
 
-现在执行`main.js`，输出的是`1`。
+现在执行`main3.js`，输出的是`1`。
 
 ```
-$ babel-node main.js
+$ babel-node main3.js
 1
 ```
 
@@ -1354,27 +1354,27 @@ exports.done = false;
 
 因此，对于`b.js`来说，它从`a.js`只输入一个变量`done`，值为`false`。
 
-然后，`b.js`接着往下执行，等到全部执行完毕，再把执行权交还给`a.js`。于是，`a.js`接着往下执行，直到执行完毕。我们写一个脚本`main.js`，验证这个过程。
+然后，`b.js`接着往下执行，等到全部执行完毕，再把执行权交还给`a.js`。于是，`a.js`接着往下执行，直到执行完毕。我们写一个脚本`main3.js`，验证这个过程。
 
 ```
 var a = require('./a.js');
 var b = require('./b.js');
-console.log('在 main.js 之中, a.done=%j, b.done=%j', a.done, b.done);
+console.log('在 main3.js 之中, a.done=%j, b.done=%j', a.done, b.done);
 ```
 
-执行`main.js`，运行结果如下。
+执行`main3.js`，运行结果如下。
 
 ```
-$ node main.js
+$ node main3.js
 
 在 b.js 之中，a.done = false
 b.js 执行完毕
 在 a.js 之中，b.done = true
 a.js 执行完毕
-在 main.js 之中, a.done=true, b.done=true
+在 main3.js 之中, a.done=true, b.done=true
 ```
 
-上面的代码证明了两件事。一是，在`b.js`之中，`a.js`没有执行完毕，只执行了第一行。二是，`main.js`执行到第二行时，不会再次执行`b.js`，而是输出缓存的`b.js`的执行结果，即它的第四行。
+上面的代码证明了两件事。一是，在`b.js`之中，`a.js`没有执行完毕，只执行了第一行。二是，`main3.js`执行到第二行时，不会再次执行`b.js`，而是输出缓存的`b.js`的执行结果，即它的第四行。
 
 ```
 exports.done = true;

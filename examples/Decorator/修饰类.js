@@ -22,7 +22,7 @@ export function mixins(...list) {
     }
 }
 
-// main.js
+// main3.js
 import { mixins } from './mixins'
 
 const Foo = {
