@@ -22,7 +22,7 @@ function () {
 }
 
 function func(arg) {
-    let arg; // 报错
+    let arg; // 报错，不能在函数内部重新声明参数
 }
 
 function func(arg) {
