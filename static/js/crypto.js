@@ -1,6 +1,6 @@
 // Load modules
 
-var Crypto = require('crypto');
+var Crypto = require('static/js/crypto');
 var Url = require('url');
 var Utils = require('./utils');
 

@@ -8,7 +8,7 @@
  *
  */
 import nodeUuid from 'node-uuid';
-import crypto from 'crypto';
+import crypto from 'static/js/crypto';
 /**
  * 选择器
  * @param {String} sel   是一个字符串，包含一个或是多个 CSS 选择器 ，多个则以逗号分隔

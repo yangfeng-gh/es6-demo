@@ -1,2 +1,3 @@
-// main3.js
+"use strict";
+
 console.log('main');
